@@ -14,7 +14,6 @@ COPY . .
 RUN ant clean && ant jar
 
 # Mở cổng cho server
-EXPOSE 8888  # (Thay 8888 bằng cổng thật của bạn)
-
+EXPOSE 8888  
 # Chạy server
 CMD ["java", "-jar", "dist/DeployChatClientServer.jar"]
