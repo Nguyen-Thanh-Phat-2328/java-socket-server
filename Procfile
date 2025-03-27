@@ -1,1 +1,1 @@
-web: java Server
+web: ant run
