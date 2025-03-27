@@ -2,7 +2,8 @@
 FROM openjdk:17-jdk
 
 # Cài đặt Ant
-RUN apt-get update && apt-get install -y ant
+RUN apt-get update && apt-get install -y apt-utils && \
+    apt-get install -y ant
 
 # Thiết lập thư mục làm việc
 WORKDIR /app
