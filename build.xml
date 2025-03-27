@@ -7,6 +7,15 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
+
+<target name="run" depends="compile">
+    <java classname="deploychatclientserver.DeployChatClientServer" fork="true">
+        <classpath>
+            <path refid="run.classpath"/>
+        </classpath>
+    </java>
+</target>
+
 <project name="DeployChatClientServer" default="default" basedir=".">
     <description>Builds, tests, and runs the project DeployChatClientServer.</description>
     <import file="nbproject/build-impl.xml"/>
