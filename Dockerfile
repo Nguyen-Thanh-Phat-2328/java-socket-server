@@ -1,7 +1,7 @@
-# Sử dụng image chứa OpenJDK 17
-FROM openjdk:17-jdk
+# Sử dụng OpenJDK 17 trên nền Debian đầy đủ
+FROM openjdk:17-jdk-bullseye
 
-# Cài đặt Ant
+# Cài đặt Ant và apt-utils
 RUN apt-get update && apt-get install -y apt-utils && \
     apt-get install -y ant
 
@@ -16,5 +16,6 @@ RUN ant clean && ant jar
 
 # Mở cổng cho server
 EXPOSE 8888  
+
 # Chạy server
 CMD ["java", "-jar", "dist/DeployChatClientServer.jar"]
